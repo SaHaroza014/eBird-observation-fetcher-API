@@ -2,7 +2,7 @@ import requests
 import pandas
 import gui
 
-# mvjj2ula0j4u
+# you will need to get API key on official eBird site, I cannot give you mine...
 
 gui_w = gui.Fetcher(2)
 
@@ -10,7 +10,7 @@ a = gui_w.x
 file_csv = pandas.read_csv("eBird_file.csv")
 payload = {}
 headers = {
-    'X-eBirdApiToken': 'mvjj2ula0j4u'
+    'X-eBirdApiToken': 'you will need to get API key on official eBird site, I cannot give you mine...'
 
 }
 parameters = {
