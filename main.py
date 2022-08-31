@@ -1,8 +1,8 @@
 import requests
 import pandas
 import gui
+import creds
 
-# you will need to get API key on official eBird site, I cannot give you mine...
 
 gui_w = gui.Fetcher(2)
 
@@ -10,7 +10,7 @@ a = gui_w.x
 file_csv = pandas.read_csv("eBird_file.csv")
 payload = {}
 headers = {
-    'X-eBirdApiToken': 'you will need to get API key on official eBird site, I cannot give you mine...'
+    'X-eBirdApiToken': creds.API
 
 }
 parameters = {
@@ -21,6 +21,7 @@ url = "https://api.ebird.org/v2/data/obs/HR/recent"
 
 response = requests.request("GET", url, headers=headers, data=payload, params=parameters)
 response.raise_for_status()
+# print(response.status_code)
 data_recent = response.json()
 for num in range(a):
     data = {
@@ -33,4 +34,4 @@ for num in range(a):
     df = pandas.DataFrame(data)
     df.to_csv("eBird_file.csv", mode='a', index=False, header=False)
 
-# print(data_recent)
+print(data_recent)
