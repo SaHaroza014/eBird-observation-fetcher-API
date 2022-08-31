@@ -1,5 +1,5 @@
 # eBird-observation-fetcher-API
-Python project for adding bird observations in key area to a .csv file;
+Python project for adding bird observations in key area to a .csv file;<br>
 made using tkinter & requests modules
 
 <hr>
